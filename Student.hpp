@@ -12,6 +12,7 @@ public:
 
 
     Student();
+    Student(const char* name, int id);
 
     Student(const Student& other);
     Student(Student&& other);
@@ -41,5 +42,5 @@ public:
     void addStudent(const Student& s);
     Student* findById(int id);
     void saveToFile(const std::string& filename);
-    //void loadFromFile(const std::string& filename);
+    void loadFromFile(const std::string& filename);
 };

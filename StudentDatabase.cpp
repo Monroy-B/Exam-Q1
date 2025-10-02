@@ -1,6 +1,9 @@
 #include "Student.hpp"
 
 Student::Student() : name(""), id(0), scores(std::vector<int>()) {}
+Student::Student(const char* name, int id) : name(std::string(name)), id(id) {
+    scores = std::vector<int>();
+}
 
 Student::Student(const Student& other) : name(other.name), id(other.id), scores(other.scores) {}
 Student::Student(Student&& other) {
@@ -128,8 +131,12 @@ void StudentDatabase::saveToFile(const std::string& filename) {
         }
     }
 }
-/*
+
 void StudentDatabase::loadFromFile(const std::string& filename) {
     std::ifstream file(filename);
 
-}*/
+    std::string name;
+    file >> name;
+
+
+}
