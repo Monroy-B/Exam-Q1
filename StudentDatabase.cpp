@@ -36,7 +36,7 @@ double Student::average() const {
         sum += scores[i];
     }
 
-    return static_cast<double>(sum) / scores.size();
+    return static_cast<double>(sum) / static_cast<double>(scores.size());
 }
 
 const std::string& Student::getName() const { return name; }
@@ -128,4 +128,8 @@ void StudentDatabase::saveToFile(const std::string& filename) {
         }
     }
 }
-//void StudentDatabase::loadFromFile(const std::string& filename);
+/*
+void StudentDatabase::loadFromFile(const std::string& filename) {
+    std::ifstream file(filename);
+
+}*/
