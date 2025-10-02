@@ -13,12 +13,16 @@ Student& Student::operator=(const Student& other) {
     name = other.name;
     id = other.id;
     scores = other.scores;
+
+    return *this;
 }
 
 Student& Student::operator=(Student&& other) {
     name = std::move(other.name);
     id = other.id;
     scores = std::move(other.scores);
+
+    return *this;
 }
 
 void Student::addScore(int score) { scores.push_back(score); }
@@ -78,12 +82,16 @@ StudentDatabase& StudentDatabase::operator=(const StudentDatabase& other) {
             *students[i] = *other.students[i];
         }
     }
+
+    return *this;
 }
 StudentDatabase& StudentDatabase::operator=(StudentDatabase&& other) {
     for(size_t i = 0; i < students.size(); ++i) {
         students[i] = other.students[i];
         other.students[i] = nullptr;
     }
+
+    return *this;
 }
 
 void StudentDatabase::addStudent(const Student& s) {
@@ -109,8 +117,8 @@ Student* StudentDatabase::findById(int id) {
 
     return students[i];
 }
-/*
-void StudentDatabase::saveToFile(const std::string& filename) {
 
+/*void StudentDatabase::saveToFile(const std::string& filename) {
+    std::stringstream 
 }*/
 //void StudentDatabase::loadFromFile(const std::string& filename);

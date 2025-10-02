@@ -1,6 +1,7 @@
 #include <vector>
 #include <string>
 #include <array>
+#include <sstream>
 
 class Student {
 public:
@@ -40,4 +41,4 @@ public:
     Student* findById(int id);
     //void saveToFile(const std::string& filename);
     //void loadFromFile(const std::string& filename);
-}
+};
