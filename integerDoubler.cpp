@@ -24,33 +24,3 @@ void integerDoubler(std::string inputFile, std::string outputFile) {
     in.close();
     out.close();
 }
-/*/
-int main() {
-    std::ofstream out("./in.txt", std::ios::binary);
-    int test = 1223;
-    out.write(reinterpret_cast<char*>(&test), sizeof(int));
-    out.write(reinterpret_cast<char*>(&test), sizeof(int));
-    out.write(reinterpret_cast<char*>(&test), sizeof(int));
-    out.write(reinterpret_cast<char*>(&test), sizeof(int));
-    out.close();
-    
-    integerDoubler("./in.txt", "./out.txt");
-
-    std::ifstream in("./out.txt", std::ios::binary);
-    double testd;
-    in.read(reinterpret_cast<char*>(&testd), sizeof(double));
-    std::cout << "double: " << testd << std::endl;
-    in.read(reinterpret_cast<char*>(&testd), sizeof(double));
-    std::cout << "double: " << testd << std::endl;
-    in.read(reinterpret_cast<char*>(&testd), sizeof(double));
-    std::cout << "double: " << testd << std::endl;
-    in.read(reinterpret_cast<char*>(&testd), sizeof(double));
-    std::cout << "double: " << testd << std::endl;
-    /*in.read(reinterpret_cast<char*>(&testd), sizeof(int));
-    std::cout << "int: " << testd << std::endl;
-    in.read(reinterpret_cast<char*>(&testd), sizeof(int));
-    std::cout << "int: " << testd << std::endl;
-    in.read(reinterpret_cast<char*>(&testd), sizeof(int));
-    std::cout << "int: " << testd << std::endl;*/
-
-}*/
