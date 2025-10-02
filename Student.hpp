@@ -26,10 +26,10 @@ public:
 };
 
 class StudentDatabase {
-private:
+public:
     std::array<Student*, 100> students;
 
-public:
+
     StudentDatabase();
     ~StudentDatabase();
 

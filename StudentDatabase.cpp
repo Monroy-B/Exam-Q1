@@ -135,8 +135,24 @@ void StudentDatabase::saveToFile(const std::string& filename) {
 void StudentDatabase::loadFromFile(const std::string& filename) {
     std::ifstream file(filename);
 
-    std::string name;
-    file >> name;
+    int id;
+    file >> id;
+    int score;
+    for(size_t i = 0; i < 100; ++i) {
+        std::string name;
+        if(!(file >> name)) { return; };
 
+        Student student(name.c_str(), id);
 
+        int old_score;
+
+        while(file >> score) {
+            student.addScore(old_score);
+            old_score = score;
+        }
+
+        addStudent(student);
+
+        id = score;
+    }
 }
