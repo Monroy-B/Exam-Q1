@@ -9,6 +9,18 @@ Student::Student(Student&& other) {
     scores= std::move(other.scores);
 }
 
+Student& Student::operator=(const Student& other) {
+    name = other.name;
+    id = other.id;
+    scores = other.scores;
+}
+
+Student& Student::operator=(Student&& other) {
+    name = std::move(other.name);
+    id = other.id;
+    scores = std::move(other.scores);
+}
+
 void Student::addScore(int score) { scores.push_back(score); }
 
 double Student::average() const {
@@ -85,9 +97,11 @@ void StudentDatabase::addStudent(const Student& s) {
 }
 
 Student* StudentDatabase::findById(int id) {
+    size_t i = 0;
+
     while(students[i] != nullptr
         && i < students.size()
-        && students[i].id != id) {
+        && students[i]->id != id) {
             ++i;
     }
 
@@ -95,6 +109,8 @@ Student* StudentDatabase::findById(int id) {
 
     return students[i];
 }
+/*
+void StudentDatabase::saveToFile(const std::string& filename) {
 
-//void StudentDatabase::saveToFile(const std::string& filename);
+}*/
 //void StudentDatabase::loadFromFile(const std::string& filename);
