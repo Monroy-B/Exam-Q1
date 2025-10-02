@@ -117,9 +117,11 @@ Student* StudentDatabase::findById(int id) {
 
     return students[i];
 }
-/*
+
 void StudentDatabase::saveToFile(const std::string& filename) {
     //std::stringstream 
-    std::ifstream file = 
-}*/
+    std::ifstream file(filename);
+
+    file
+}
 //void StudentDatabase::loadFromFile(const std::string& filename);
