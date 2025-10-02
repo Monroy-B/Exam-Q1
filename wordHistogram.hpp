@@ -2,4 +2,4 @@
 #include <vector>
 #include <sstream>
 
-std::vector<size_t> wordHistogram(std::string sentence);
+std::vector<int> wordHistogram(std::string sentence);

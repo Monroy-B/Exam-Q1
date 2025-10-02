@@ -1,9 +1,9 @@
 #include "wordHistogram.hpp"
 
-std::vector<size_t> wordHistogram(std::string sentence) {
+std::vector<int> wordHistogram(std::string sentence) {
     std::stringstream in(sentence);
 
-    std::vector<size_t> char_count;
+    std::vector<int> char_count;
     
     std::string word;
 
@@ -22,9 +22,9 @@ std::vector<size_t> wordHistogram(std::string sentence) {
 
     return char_count;
 }
-
-/*int main() {
-    std::vector<size_t> char_count = wordHistogram("I LOVEE BEANS.  asdf");
+/*
+int main() {
+    std::vector<int> char_count = wordHistogram("we love cpp");
 
     for (size_t i = 0; i < char_count.size(); ++i) {
 
