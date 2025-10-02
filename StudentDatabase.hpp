@@ -2,26 +2,7 @@
 #include <string>
 #include <array>
 #include <sstream>
-
-class Student {
-public:
-    std::string name;
-    int id;
-    std::vector<int> scores;
-
-
-    Student();
-
-    Student(const Student& other);
-    Student(Student&& other);
-    Student& operator=(const Student& other);
-    Student& operator=(Student&& other);
-    
-    void addScore(int score);
-    double average() const;
-    const std::string& getName() const;
-    int getId() const;
-};
+#include <fstream>
 
 class StudentDatabase {
 private:
@@ -39,6 +20,6 @@ public:
 
     void addStudent(const Student& s);
     Student* findById(int id);
-    //void saveToFile(const std::string& filename);
+    void saveToFile(const std::string& filename);
     //void loadFromFile(const std::string& filename);
 };

@@ -1,4 +1,4 @@
-#include "StudentDatabase.hpp"
+#include "Student.hpp"
 
 Student::Student() : name(""), id(0), scores(std::vector<int>()) {}
 
@@ -117,8 +117,9 @@ Student* StudentDatabase::findById(int id) {
 
     return students[i];
 }
-
-/*void StudentDatabase::saveToFile(const std::string& filename) {
-    std::stringstream 
+/*
+void StudentDatabase::saveToFile(const std::string& filename) {
+    //std::stringstream 
+    std::ifstream file = 
 }*/
 //void StudentDatabase::loadFromFile(const std::string& filename);
