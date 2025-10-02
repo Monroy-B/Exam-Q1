@@ -12,15 +12,16 @@ void integerDoubler(std::string inputFile, std::string outputFile) {
     char* input_int_ptr = reinterpret_cast<char*>(&input_int);
     char* output_double_ptr = reinterpret_cast<char*>(&output_double);
 
-    //size_t i = 0;
+    size_t i = 0;
     while(!in.eof()) {
-        //++i;
-        in.read(input_int_ptr, sizeof(int));
-        
-        if(!in.eof()) {
+        if(i != 0) {
             output_double = input_int * 2;
             out.write(output_double_ptr, sizeof(int));
         }
+
+        ++i;
+        
+        in.read(input_int_ptr, sizeof(int));
     }
     //std::cout << "Loop ended!\n" << i << std::endl;
 
