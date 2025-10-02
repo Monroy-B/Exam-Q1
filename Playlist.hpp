@@ -16,5 +16,5 @@ public:
     double averageSongLength() const;
 
     Playlist operator+(const Playlist& other);
-    //Playlist operator+=(const Playlist& other);
+    Playlist operator+=(const Playlist& other);
 };

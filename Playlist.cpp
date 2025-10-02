@@ -17,7 +17,10 @@ double Playlist::averageSongLength() const {
 Playlist Playlist::operator+(const Playlist& other) {
     return Playlist(numSongs_ + other.numSongs_, totalMinutes_ + other.totalMinutes_);
 }
-/*
-Playlist operator+=(const Playlist& other) {
-    this
-}*/
+
+Playlist Playlist::operator+=(const Playlist& other) {
+    numSongs_ += other.numSongs_;
+    totalMinutes_ += other.totalMinutes_;
+    
+    return *this;
+}
