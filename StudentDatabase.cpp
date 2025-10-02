@@ -1,7 +1,9 @@
 #include "Student.hpp"
 
 Student::Student() : name(""), id(0), scores(std::vector<int>()) {}
-Student::Student(const char* name, int id) : name(std::string(name)), id(id) {
+Student::Student(const char* name, int id) {
+    this->name = name;
+    this->id = id;
     scores = std::vector<int>();
 }
 
@@ -155,4 +157,8 @@ void StudentDatabase::loadFromFile(const std::string& filename) {
 
         id = score;
     }
+}
+
+int main() {
+
 }
