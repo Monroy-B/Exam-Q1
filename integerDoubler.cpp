@@ -16,8 +16,11 @@ void integerDoubler(std::string inputFile, std::string outputFile) {
     while(!in.eof()) {
         //++i;
         in.read(input_int_ptr, sizeof(int));
-        output_double = input_int * 2;
-        out.write(output_double_ptr, sizeof(int));
+        
+        if(!in.eof()) {
+            output_double = input_int * 2;
+            out.write(output_double_ptr, sizeof(int));
+        }
     }
     //std::cout << "Loop ended!\n" << i << std::endl;
 
