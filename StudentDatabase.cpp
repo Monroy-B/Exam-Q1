@@ -119,9 +119,13 @@ Student* StudentDatabase::findById(int id) {
 }
 
 void StudentDatabase::saveToFile(const std::string& filename) {
-    //std::stringstream 
-    std::ifstream file(filename);
+    std::ofstream file(filename);
 
-    file
+    for (size_t i = 0; i < students.size() && students[i] != nullptr; ++i) {
+        file << students[i]->id << " " << students[i]->name;
+        for(size_t j = 0; j < students[i]->scores.size(); ++j) {
+            file << " " << students[i]->scores[j];
+        }
+    }
 }
 //void StudentDatabase::loadFromFile(const std::string& filename);
