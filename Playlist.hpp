@@ -3,10 +3,10 @@ private:
     int numSongs_;
     double totalMinutes_;
 
+public:
     Playlist();
     Playlist(int n, double t);
 
-public:
     void setNumSongs(int n);
     void setTotalMinutes(double t);
 
@@ -16,4 +16,5 @@ public:
     double averageSongLength() const;
 
     Playlist operator+(const Playlist& other);
+    Playlist operator+=(const Playlist& other);
 };
